@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use App\Enums\ActivationCodeTypeEnum;
-use App\Mail\Site\Auth\EmailVerificationMale;
+use App\Mail\Auth\EmailVerificationMale;
 use App\Http\Controllers\Api\ApiBaseController;
 use Symfony\Component\HttpFoundation\Response as HttpStatus;
 

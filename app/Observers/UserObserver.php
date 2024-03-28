@@ -2,7 +2,6 @@
 
 namespace App\Observers;
 
-use App\Models\Role;
 use App\Models\User;
 use App\Models\UserMeta;
 
@@ -29,19 +28,10 @@ class UserObserver
             'user_id' => $user->id,
         ]);
 
-        $user->wallet()->create([
-            'walletable_id' => $user->id,
-            'walletable_type' => User::class,
-        ]);
-
         UserMeta::create([
             'metaable_id' => $user->id,
             'metaable_type' => get_class($user),
         ]);
-
-        $role = Role::where('name', 'user')->pluck('id');
-
-        $user->roles()->sync($role);
     }
 
     /**

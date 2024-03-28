@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Listeners\Site\Auth;
+namespace App\Listeners\Auth;
 
-use App\Events\Site\Auth\UserLoggedIn;
+use App\Events\Auth\UserLoggedIn;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
 

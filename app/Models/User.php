@@ -3,59 +3,50 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use App\Enums\ActivationCodeTypeEnum;
+use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Crypt;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
+use App\Notifications\User\Auth\VerificationEmailNotification;
+use App\Notifications\User\Auth\ResetPasswordEmailRequestNotification;
+use Miladimos\Toolkit\Traits\HasUUID;
 
 class User extends Authenticatable
 {
-    use HasFactory, Notifiable;
+    use HasFactory,
+        Notifiable,
+        HasUUID;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array<int, string>
-     */
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-    ];
+    protected $table = 'users';
 
-    /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var array<int, string>
-     */
+    // protected $fillable = [
+    //     'name',
+    //     'email',
+    //     'password',
+    // ];
+
+    protected $guarded = [];
+
     protected $hidden = [
         'password',
         'remember_token',
     ];
-    protected $table = 'users';
 
     protected $with = ['profile'];
-    protected $guarded = [];
 
-    /**
-     * Get the attributes that should be cast.
-     *
-     * @return array<string, string>
-     */
+
     protected function casts(): array
     {
         return [
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
-    }
-
-    public function letters()
-    {
-        return $this->hasMany(Letter::class, 'user_id', 'id');
-    }
-    public function activationCodes()
-    {
-        return $this->hasMany(ActivationCode::class);
     }
 
     public function profile()
@@ -68,10 +59,21 @@ class User extends Authenticatable
         return $this->morphOne(UserMeta::class, 'metaable');
     }
 
+    public function letters()
+    {
+        return $this->hasMany(Letter::class, 'user_id', 'id');
+    }
+
+    public function activationCodes()
+    {
+        return $this->hasMany(ActivationCode::class);
+    }
+
     public function isAdmin()
     {
         return (bool) $this->is_admin;
     }
+
     public function isOnline()
     {
         return Cache::has('user-is-online-' . $this->id);
@@ -90,7 +92,7 @@ class User extends Authenticatable
 
     public function isLoggedInUser(): bool
     {
-        return $this->id === user()->id;
+        return $this->id === Auth::user()->id;
     }
 
     public function path()
@@ -127,9 +129,11 @@ class User extends Authenticatable
         ]);
     }
 
-    public function setPasswordAttribute($value)
+    protected function password(): Attribute
     {
-        $this->attributes['password'] = bcrypt($value);
+        return Attribute::make(
+            set: fn (string $password) => bcrypt($password)
+        );
     }
 
     public function getFullNameAttribute()
@@ -196,7 +200,7 @@ class User extends Authenticatable
             $chars = array_merge($digits, $sChars, $cChars);
             $arrToStr = implode('', $chars);
             $shuf = str_shuffle($arrToStr);
-            $username = 'snj_' . substr($shuf, 0, 8);
+            $username = 'hlk_' . substr($shuf, 0, 8);
             $exist = true;
 
             if (!static::where('username', $username)->exists() && static::where('username', null)) {

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Api\v1\Auth;
 
 use App\Enums\ForgotPasswordTypeEnum;
-use App\Events\Site\Auth\UserForgotPassword;
+use App\Events\Auth\UserForgotPassword;
 use App\Http\Controllers\Api\ApiBaseController;
 use App\Http\Requests\ForgotPasswordEmailRequest;
 use App\Http\Requests\ForgotPasswordMobileRequest;

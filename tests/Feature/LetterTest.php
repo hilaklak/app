@@ -12,7 +12,6 @@ class LetterTest extends TestCase
 {
     use RefreshDatabase;
 
-
     public function test_a_user_can_create_a_letter()
     {
 
@@ -34,7 +33,8 @@ class LetterTest extends TestCase
 
         $response = $this->get('/letters');
 
-        $response->assertSee($letter->title);
+        $response->assertStatus(200)
+            ->assertSee($letter->title);
     }
 
     public function test_a_user_can_read_a_letter()
@@ -164,12 +164,5 @@ class LetterTest extends TestCase
 
         $this->delete("/letters/$letter->id")
             ->assertStatus(403);
-    }
-
-    public function test_the_application_returns_a_successful_response(): void
-    {
-        $response = $this->get('/');
-
-        $response->assertStatus(200);
     }
 }

@@ -4,8 +4,80 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1760ba089d59e3a0a0f0fdb0f797898d",
+    "content-hash": "3f5e4ff7dcdc027e492dcacc2f2eb654",
     "packages": [
+        {
+            "name": "artesaos/seotools",
+            "version": "v1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/artesaos/seotools.git",
+                "reference": "f87e43a2ac43d4ce1cbf20c98a161ac888dd5626"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/artesaos/seotools/zipball/f87e43a2ac43d4ce1cbf20c98a161ac888dd5626",
+                "reference": "f87e43a2ac43d4ce1cbf20c98a161ac888dd5626",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "illuminate/config": "^10.0 || ^11.0",
+                "illuminate/support": "^10.0 || ^11.0",
+                "php": "^8.1"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^8.0 || ^9.0",
+                "phpspec/phpspec": "~5.1.1 || ^6.0 || ^7.0",
+                "phpunit/phpunit": "^9.0 || ^10.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Artesaos\\SEOTools\\Providers\\SEOToolsServiceProvider"
+                    ],
+                    "aliases": {
+                        "SEOMeta": "Artesaos\\SEOTools\\Facades\\SEOMeta",
+                        "OpenGraph": "Artesaos\\SEOTools\\Facades\\OpenGraph",
+                        "Twitter": "Artesaos\\SEOTools\\Facades\\TwitterCard",
+                        "JsonLd": "Artesaos\\SEOTools\\Facades\\JsonLd",
+                        "SEO": "Artesaos\\SEOTools\\Facades\\SEOTools"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Artesaos\\SEOTools\\": "src/SEOTools/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Vinicius",
+                    "email": "luiz.vinicius73@gmail.com"
+                }
+            ],
+            "description": "SEO Tools for Laravel and Lumen",
+            "keywords": [
+                "JSON-LD",
+                "laravel",
+                "lumen",
+                "metatags",
+                "opengraph",
+                "seo",
+                "seotools",
+                "webmaster"
+            ],
+            "support": {
+                "issues": "https://github.com/artesaos/seotools/issues",
+                "source": "https://github.com/artesaos/seotools"
+            },
+            "time": "2024-03-16T09:54:59+00:00"
+        },
         {
             "name": "blade-ui-kit/blade-heroicons",
             "version": "2.3.0",
@@ -1344,6 +1416,325 @@
             "time": "2023-12-03T19:50:20+00:00"
         },
         {
+            "name": "hekmatinasser/jalali",
+            "version": "v8.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/hekmatinasser/jalali.git",
+                "reference": "745cdf40eac790b046b93d3836a29d68f15220f7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/hekmatinasser/jalali/zipball/745cdf40eac790b046b93d3836a29d68f15220f7",
+                "reference": "745cdf40eac790b046b93d3836a29d68f15220f7",
+                "shasum": ""
+            },
+            "require": {
+                "hekmatinasser/notowo": "^1.0",
+                "php": "^8.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^4.18|^5.20|^6.24|^7.0"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/helpers.php"
+                ],
+                "psr-4": {
+                    "Hekmatinasser\\Jalali\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nasser Hekmati",
+                    "email": "hekmati.nasser@gmail.com"
+                }
+            ],
+            "description": "This Package helps developers to work with Jalali Datetime class for PHP",
+            "keywords": [
+                "Jalali",
+                "date",
+                "datetime",
+                "php",
+                "shamsi"
+            ],
+            "support": {
+                "issues": "https://github.com/hekmatinasser/jalali/issues",
+                "source": "https://github.com/hekmatinasser/jalali/tree/v8.2"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/hekmatinasser",
+                    "type": "github"
+                }
+            ],
+            "time": "2023-02-04T07:11:29+00:00"
+        },
+        {
+            "name": "hekmatinasser/notowo",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/hekmatinasser/notowo.git",
+                "reference": "c51ad5dcedac966dd93ce558ac7e6a84e0020d6d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/hekmatinasser/notowo/zipball/c51ad5dcedac966dd93ce558ac7e6a84e0020d6d",
+                "reference": "c51ad5dcedac966dd93ce558ac7e6a84e0020d6d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/helpers.php"
+                ],
+                "psr-4": {
+                    "Hekmatinasser\\Notowo\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nasser Hekmati",
+                    "email": "hekmati.nasser@gmail.com"
+                }
+            ],
+            "description": "This Package helps developers change number to word for all language on Laravel freamwork PHP",
+            "keywords": [
+                "Notowo",
+                "laravel",
+                "n2w",
+                "number",
+                "word"
+            ],
+            "support": {
+                "issues": "https://github.com/hekmatinasser/notowo/issues",
+                "source": "https://github.com/hekmatinasser/notowo/tree/v1.0.1"
+            },
+            "time": "2017-09-22T13:41:16+00:00"
+        },
+        {
+            "name": "hekmatinasser/verta",
+            "version": "v8.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/hekmatinasser/verta.git",
+                "reference": "5e63e0c218eedf8270b5500ea8b9a8ae54e1c2d6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/hekmatinasser/verta/zipball/5e63e0c218eedf8270b5500ea8b9a8ae54e1c2d6",
+                "reference": "5e63e0c218eedf8270b5500ea8b9a8ae54e1c2d6",
+                "shasum": ""
+            },
+            "require": {
+                "hekmatinasser/jalali": "^8.2",
+                "illuminate/support": "^8.0|^9.0|^10.0|^11.0",
+                "illuminate/validation": "^8.0|^9.0|^10.0|^11.0",
+                "php": "^8.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^6.23|^7.0|^8.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Hekmatinasser\\Verta\\Laravel\\VertaServiceProvider"
+                    ],
+                    "aliases": {
+                        "Verta": "Hekmatinasser\\Verta\\Verta"
+                    }
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/helpers.php"
+                ],
+                "psr-4": {
+                    "Hekmatinasser\\Verta\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nasser Hekmati",
+                    "email": "hekmati.nasser@gmail.com"
+                }
+            ],
+            "description": "This Package helps developers to work with Jalali Datetime class for Laravel Framework PHP",
+            "keywords": [
+                "Jalali",
+                "Verta",
+                "date",
+                "datetime",
+                "laravel",
+                "shamsi"
+            ],
+            "support": {
+                "issues": "https://github.com/hekmatinasser/verta/issues",
+                "source": "https://github.com/hekmatinasser/verta/tree/v8.4"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/hekmatinasser",
+                    "type": "github"
+                }
+            ],
+            "time": "2024-03-12T05:35:21+00:00"
+        },
+        {
+            "name": "intervention/gif",
+            "version": "4.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Intervention/gif.git",
+                "reference": "3a2b5f8a8856e8877cdab5c47e51aab2d4cb23a3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Intervention/gif/zipball/3a2b5f8a8856e8877cdab5c47e51aab2d4cb23a3",
+                "reference": "3a2b5f8a8856e8877cdab5c47e51aab2d4cb23a3",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.1"
+            },
+            "require-dev": {
+                "phpstan/phpstan": "^1",
+                "phpunit/phpunit": "^10.0",
+                "slevomat/coding-standard": "~8.0",
+                "squizlabs/php_codesniffer": "^3.8"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Intervention\\Gif\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Oliver Vogel",
+                    "email": "oliver@intervention.io",
+                    "homepage": "https://intervention.io/"
+                }
+            ],
+            "description": "Native PHP GIF Encoder/Decoder",
+            "homepage": "https://github.com/intervention/gif",
+            "keywords": [
+                "animation",
+                "gd",
+                "gif",
+                "image"
+            ],
+            "support": {
+                "issues": "https://github.com/Intervention/gif/issues",
+                "source": "https://github.com/Intervention/gif/tree/4.1.0"
+            },
+            "funding": [
+                {
+                    "url": "https://paypal.me/interventionio",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/Intervention",
+                    "type": "github"
+                }
+            ],
+            "time": "2024-03-26T17:23:47+00:00"
+        },
+        {
+            "name": "intervention/image",
+            "version": "3.5.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Intervention/image.git",
+                "reference": "67be90e5700370c88833190d4edc07e4bb7d157b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Intervention/image/zipball/67be90e5700370c88833190d4edc07e4bb7d157b",
+                "reference": "67be90e5700370c88833190d4edc07e4bb7d157b",
+                "shasum": ""
+            },
+            "require": {
+                "ext-mbstring": "*",
+                "intervention/gif": "^4.0.1",
+                "php": "^8.1"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.6",
+                "phpstan/phpstan": "^1",
+                "phpunit/phpunit": "^10.0",
+                "slevomat/coding-standard": "~8.0",
+                "squizlabs/php_codesniffer": "^3.8"
+            },
+            "suggest": {
+                "ext-exif": "Recommended to be able to read EXIF data properly."
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Intervention\\Image\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Oliver Vogel",
+                    "email": "oliver@intervention.io",
+                    "homepage": "https://intervention.io/"
+                }
+            ],
+            "description": "PHP image manipulation",
+            "homepage": "https://image.intervention.io/",
+            "keywords": [
+                "gd",
+                "image",
+                "imagick",
+                "resize",
+                "thumbnail",
+                "watermark"
+            ],
+            "support": {
+                "issues": "https://github.com/Intervention/image/issues",
+                "source": "https://github.com/Intervention/image/tree/3.5.1"
+            },
+            "funding": [
+                {
+                    "url": "https://paypal.me/interventionio",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/Intervention",
+                    "type": "github"
+                }
+            ],
+            "time": "2024-03-22T07:12:19+00:00"
+        },
+        {
             "name": "jfcherng/php-color-output",
             "version": "3.0.0",
             "source": {
@@ -1841,6 +2232,70 @@
                 "source": "https://github.com/laravel/prompts/tree/v0.1.17"
             },
             "time": "2024-03-13T16:05:43+00:00"
+        },
+        {
+            "name": "laravel/sanctum",
+            "version": "v4.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/sanctum.git",
+                "reference": "d1de99bf8d31199aaf93881561622489ab91ba58"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/sanctum/zipball/d1de99bf8d31199aaf93881561622489ab91ba58",
+                "reference": "d1de99bf8d31199aaf93881561622489ab91ba58",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "illuminate/console": "^11.0",
+                "illuminate/contracts": "^11.0",
+                "illuminate/database": "^11.0",
+                "illuminate/support": "^11.0",
+                "php": "^8.2",
+                "symfony/console": "^7.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.6",
+                "orchestra/testbench": "^9.0",
+                "phpstan/phpstan": "^1.10",
+                "phpunit/phpunit": "^10.5"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Laravel\\Sanctum\\SanctumServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Laravel\\Sanctum\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylor@laravel.com"
+                }
+            ],
+            "description": "Laravel Sanctum provides a featherweight authentication system for SPAs and simple APIs.",
+            "keywords": [
+                "auth",
+                "laravel",
+                "sanctum"
+            ],
+            "support": {
+                "issues": "https://github.com/laravel/sanctum/issues",
+                "source": "https://github.com/laravel/sanctum"
+            },
+            "time": "2024-03-19T20:09:38+00:00"
         },
         {
             "name": "laravel/serializable-closure",
@@ -2507,6 +2962,80 @@
                 "source": "https://github.com/livewire/volt"
             },
             "time": "2024-03-06T20:38:22+00:00"
+        },
+        {
+            "name": "miladimos/laravel-toolkit",
+            "version": "v0.9.12",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/miladimos/laravel-toolkit.git",
+                "reference": "54bc66c4a967d8e00d37622584be50ffe0093ea4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/miladimos/laravel-toolkit/zipball/54bc66c4a967d8e00d37622584be50ffe0093ea4",
+                "reference": "54bc66c4a967d8e00d37622584be50ffe0093ea4",
+                "shasum": ""
+            },
+            "require": {
+                "hekmatinasser/verta": "*",
+                "intervention/image": "*",
+                "php": "^7.4|^8.0",
+                "webpatser/laravel-uuid": "*"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Miladimos\\Toolkit\\Providers\\ToolkitServiceProvider"
+                    ],
+                    "aliases": {
+                        "Toolkit": "Miladimos\\Toolkit\\Facade\\ToolkitFacade"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Miladimos\\Toolkit\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "miladimos",
+                    "email": "miladimos@outlook.com",
+                    "homepage": "https://github.com/miladimos",
+                    "role": "creator"
+                }
+            ],
+            "description": "a package for collections of custom toolkit",
+            "homepage": "https://github.com/miladimos/laravel-toolkit",
+            "keywords": [
+                "Laravel Support",
+                "laravel",
+                "laravel helper file",
+                "laravel packages",
+                "laravel-helper",
+                "laravel-helpers",
+                "laravel-package",
+                "laravel-toolkit",
+                "lumen packages",
+                "lumen support"
+            ],
+            "support": {
+                "issues": "https://github.com/miladimos/laravel-toolkit/issues",
+                "source": "https://github.com/miladimos/laravel-toolkit/tree/v0.9.12"
+            },
+            "funding": [
+                {
+                    "url": "https://idpay.ir/laravelir",
+                    "type": "custom"
+                }
+            ],
+            "time": "2023-03-07T00:04:23+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -6451,6 +6980,64 @@
                 "source": "https://github.com/webmozarts/assert/tree/1.11.0"
             },
             "time": "2022-06-03T18:03:27+00:00"
+        },
+        {
+            "name": "webpatser/laravel-uuid",
+            "version": "4.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/webpatser/laravel-uuid.git",
+                "reference": "f82715c6bc6a4fcc61bb020cb4fddeb8cc73bbea"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/webpatser/laravel-uuid/zipball/f82715c6bc6a4fcc61bb020cb4fddeb8cc73bbea",
+                "reference": "f82715c6bc6a4fcc61bb020cb4fddeb8cc73bbea",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.0|^8.0"
+            },
+            "require-dev": {
+                "fakerphp/faker": "^1.9.1",
+                "phpunit/phpunit": "^9.3.3"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Webpatser\\Uuid\\UuidServiceProvider"
+                    ],
+                    "aliases": {
+                        "Uuid": "Webpatser\\Uuid\\Uuid"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Webpatser\\Uuid\\": "src/Webpatser/Uuid/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Christoph Kempen",
+                    "email": "christoph@downsized.nl"
+                }
+            ],
+            "description": "Laravel package to generate and to validate a universally unique identifier (UUID) according to the RFC 4122 standard. Support for version 1, 3, 4 and 5 UUIDs are built-in.",
+            "homepage": "https://github.com/webpatser/laravel-uuid",
+            "keywords": [
+                "UUID RFC4122"
+            ],
+            "support": {
+                "issues": "https://github.com/webpatser/laravel-uuid/issues",
+                "source": "https://github.com/webpatser/laravel-uuid"
+            },
+            "time": "2023-05-19T08:56:59+00:00"
         }
     ],
     "packages-dev": [

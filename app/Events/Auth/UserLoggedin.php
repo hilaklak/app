@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Events\Site\Auth;
+namespace App\Events\Auth;
 
 use App\Models\User;
 use Illuminate\Broadcasting\InteractsWithSockets;

@@ -24,20 +24,4 @@ class Faq extends Model
     {
         return $this->belongsTo(FaqGroup::class);
     }
-
-    public function type()
-    {
-        switch ($this->type) {
-            case FaqTypeEnum::SITE:
-                return 'سایت';
-                break;
-            case FaqTypeEnum::COURSE:
-                return 'دوره';
-                break;
-
-            default:
-                // code...
-                break;
-        }
-    }
 }
