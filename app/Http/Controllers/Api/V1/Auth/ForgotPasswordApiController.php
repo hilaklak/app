@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Http\Controllers\Api\v1\Auth;
+namespace App\Http\Controllers\Api\V1\Auth;
 
+use App\Models\User;
+use Illuminate\Support\Str;
+use Illuminate\Http\Request;
+use App\Models\PasswordReset;
 use App\Enums\ForgotPasswordTypeEnum;
 use App\Events\Auth\UserForgotPassword;
+use Illuminate\Support\Facades\Validator;
 use App\Http\Controllers\Api\ApiBaseController;
 use App\Http\Requests\ForgotPasswordEmailRequest;
 use App\Http\Requests\ForgotPasswordMobileRequest;
-use App\Models\PasswordReset;
-use App\Models\User;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
-use Illuminate\Support\Str;
 use Symfony\Component\HttpFoundation\Response as HttpStatus;
 
 class ForgotPasswordApiController extends ApiBaseController
